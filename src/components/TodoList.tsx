@@ -1,16 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-interface TodoListProps  {
-    items: {id: string, text:string}[]
+import { Todo } from '../todo.modal';
+
+interface TodoListProps {
+    items: Todo[];
 }
 
-const TodoList: React.FC<TodoListProps> = (props) => {
+const TodoList: React.FC<TodoListProps> = props => {
+    const { items } = props;
 
-    const { items } = props
-    
-    return <ul>
-        {items.map(todo => <li key={todo.id}>{todo.text}</li>)}
-    </ul>
-}
+    return (
+        <ul>
+            {items.map(todo => (
+                <li key={todo.id}>{todo.text}</li>
+            ))}
+        </ul>
+    );
+};
 
-export default TodoList
+export default TodoList;
