@@ -1,8 +1,12 @@
 import React from 'react';
 
+import TodoList from './components/TodoList'
+
 const App: React.FC = () => {
+
+  const todos = [{id: '1', text: 'Finsh!'}]
   return (
-    <div >app</div>
+    <React.Fragment><TodoList items={todos}/></React.Fragment>
   );
 }
 
