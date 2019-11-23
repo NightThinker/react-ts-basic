@@ -4,10 +4,11 @@ import TodoList from './components/TodoList';
 import NewTodo from './components/NewTodo';
 
 const App: React.FC = () => {
-    const [todos, setTodos] = useState([{ id: '1', text: 'Finsh!' }]);
+    const [todos, setTodos] = useState<{ id: string; text: string }[]>([]);
 
     const addTodoHandler = (text: string) => {
         console.log(text);
+        setTodos([{ id: Math.random().toString(), text: text }]);
     };
 
     return (
